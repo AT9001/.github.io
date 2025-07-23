@@ -1575,7 +1575,7 @@
                 <!-- Testimonial 1 -->
                 <div class="testimonial">
                     <div class="testimonial-text">
-                        "Edulives transformed my English speaking skills. The interactive classes and personalized feedback helped me gain confidence. I got promoted at work within 3 months of completing the course!"
+                        "EduLecture transformed my English speaking skills. The interactive classes and personalized feedback helped me gain confidence. I got promoted at work within 3 months of completing the course!"
                     </div>
                     <div class="testimonial-author">
                         <div class="author-image">
@@ -1779,7 +1779,7 @@
                         What if I miss a live class?
                     </div>
                     <div class="faq-answer">
-                        <p>All live classes are recorded and made available to enrolled students. You can access the recording and catch up on what you missed. You can also schedule a one-on-one session with the instructor if you have specific questions.</p>
+                        <p>All live classes are auto recorded and made available to enrolled students. You can access the recording and catch up on what you missed. You can also schedule a one-on-one session with the instructor if you have specific questions.</p>
                     </div>
                 </div>
             </div>
@@ -1799,7 +1799,7 @@
                     <li>All fees must be paid in full before the course start date unless a payment plan has been agreed upon.</li>
                     <li>Students are expected to maintain proper decorum during online classes.</li>
                     <li>Course materials are for personal use only and should not be distributed without permission.</li>
-                    <li>Edulives reserves the right to modify course content, schedules, and fees as necessary.</li>
+                    <li>EduLecture reserves the right to modify course content, schedules, and fees as necessary.</li>
                 </ul>
                 
                 <h3>Payment Terms</h3>
@@ -1831,7 +1831,7 @@
             <div class="footer-container">
                 <div class="footer-col">
                     <h3>About EduLecture</h3>
-                    <p>Edulives is a premier online learning platform offering quality education in spoken English, drawing, and computer courses. Our mission is to make learning accessible to everyone.</p>
+                    <p>EduLecture is a premier online learning platform offering quality education in spoken English, drawing, and computer courses. Our mission is to make learning accessible to everyone.</p>
                     <div class="social-links-footer">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1880,32 +1880,32 @@
                 <button class="close-btn" id="closeEnquiryModal">&times;</button>
             </div>
             <div class="modal-body">
-                <form id="enquiryForm">
+                <form id="enquiryForm" action="https://formspree.io/f/xovlekag" method="POST">
                     <div class="form-group">
                         <label for="enquiryName">Full Name</label>
-                        <input type="text" id="enquiryName" class="form-control" required>
+                        <input type="text" id="enquiryName" name="Full Name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="enquiryAddress">Address</label>
-                        <input type="text" id="enquiryAddress" class="form-control" required>
+                        <input type="text" id="enquiryAddress" name="Address" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="enquiryGender">Gender</label>
-                        <select id="enquiryGender" class="form-control" required>
+                        <select id="enquiryGender" name="Gender" class="form-control" required>
                             <option value="">Select Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
-                            <option value="Prefer not to say">Prefer not to say</option>
+                            
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="enquiryAge">Age</label>
-                        <input type="number" id="enquiryAge" class="form-control" required min="5" max="100">
+                        <input type="number" id="enquiryAge" name="Age" class="form-control" required min="5" max="100">
                     </div>
                     <div class="form-group">
                         <label for="enquiryCourse">Course Interested In</label>
-                        <select id="enquiryCourse" class="form-control" required>
+                        <select id="enquiryCourse" name="Course Name" class="form-control" required>
                             <option value="">Select Course</option>
                             <optgroup label="Spoken English">
                                 <option value="Basic English">Basic English</option>
@@ -1928,13 +1928,13 @@
                     </div>
                     <div class="form-group">
                         <label for="enquiryMobile">Mobile Number</label>
-                        <input type="tel" id="enquiryMobile" class="form-control" required pattern="[0-9]{10}">
+                        <input type="tel" id="enquiryMobile" name="Mobile Number" class="form-control" required pattern="[0-9]{10}">
                     </div>
                     <div class="form-group">
                         <label for="enquiryEmail">Email ID</label>
-                        <input type="email" id="enquiryEmail" class="form-control" required>
+                        <input type="email" id="enquiryEmail" name="Email Id" class="form-control" required>
                     </div>
-                    <button type="submit" class="submit-btn">Submit Enquiry</button>
+                    <button type="submit" class="submit btn-primary">Submit Enquiry</button>
                 </form>
 	
 
@@ -1974,32 +1974,32 @@
                 <button class="close-btn" id="closeAdmissionModal">&times;</button>
             </div>
             <div class="modal-body">
-                <form id="admissionForm">
+                <form id="admissionForm" action="https://formspree.io/f/xqalpyew" method="POST">
                     <div class="form-group">
                         <label for="admissionName">Full Name</label>
-                        <input type="text" id="admissionName" class="form-control" required>
+                        <input type="text" id="admissionName" name="Full Name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="admissionAddress">Address</label>
-                        <input type="text" id="admissionAddress" class="form-control" required>
+                        <input type="text" id="admissionAddress" nmae="Address" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="admissionGender">Gender</label>
-                        <select id="admissionGender" class="form-control" required>
+                        <select id="admissionGender" nmae="Gender" class="form-control" required>
                             <option value="">Select Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
-                            <option value="Prefer not to say">Prefer not to say</option>
+                            
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="admissionAge">Age</label>
-                        <input type="number" id="admissionAge" class="form-control" required min="5" max="100">
+                        <input type="number" id="admissionAge" nmae="Age" class="form-control" required min="5" max="100">
                     </div>
                     <div class="form-group">
                         <label for="admissionCourse">Course</label>
-                        <select id="admissionCourse" class="form-control" required>
+                        <select id="admissionCourse" name="Course Name" class="form-control" required>
                             <option value="">Select Course</option>
                             <optgroup label="Spoken English">
                                 <option value="Basic English">Basic English</option>
@@ -2022,7 +2022,7 @@
                     </div>
                     <div class="form-group">
                         <label for="admissionBatch">Preferred Batch</label>
-                        <select id="admissionBatch" class="form-control" required>
+                        <select id="admissionBatch" name="Batch Time" class="form-control" required>
                             <option value="">Select Batch</option>
                             <option value="Morning (9AM-12PM)">Morning (9AM-12PM)</option>
                             <option value="Afternoon (2PM-5PM)">Afternoon (2PM-5PM)</option>
@@ -2031,15 +2031,15 @@
                     </div>
                     <div class="form-group">
                         <label for="admissionGuardian">Guardian Name</label>
-                        <input type="text" id="admissionGuardian" class="form-control">
+                        <input type="text" id="admissionGuardian" name="Guardian Nmae" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="admissionMobile">Mobile Number</label>
-                        <input type="tel" id="admissionMobile" class="form-control" required pattern="[0-9]{10}">
+                        <input type="tel" id="admissionMobile" name="Mobile Number" class="form-control" required pattern="[0-9]{10}">
                     </div>
                     <div class="form-group">
                         <label for="admissionEmail">Email ID</label>
-                        <input type="email" id="admissionEmail" class="form-control" required>
+                        <input type="email" id="admissionEmail" name="Email Id" class="form-control" required>
                     </div>
                     
                     <div class="payment-options">
@@ -2073,7 +2073,7 @@
                         </div>
                     </div>
                     
-                    <button type="submit" class="submit-btn">Proceed to Payment</button>
+                    <button type="submit" class="submit btn-primary">Proceed to Payment</button>
                 </form>
             </div>
         </div>
