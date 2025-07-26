@@ -2505,25 +2505,69 @@
 
 
 
- const courseFees = {
-    "Basic English": 2000,
-    "Intermediate English": 2500,
-    "Advanced English": 3000,
-    "Basic Drawing": 2500,
-    "Intermediate Drawing": 3000,
-    "Advanced Drawing": 3500,
-    "Basic Computer": 3000,
-    "Finance & Accounting": 3500,
-    "Web Development": 5000,
-    "Graphics Designing": 4000,
-    "Digital Marketing": 4500
+
+
+
+
+
+	    
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+ // Course-fee mapping
+  const courseFees = {
+    "Basic English": 300,
+    "Intermediate English": 400,
+    "Advanced English": 500,
+    "Basic Drawing": 250,
+    "Intermediate Drawing": 350,
+    "Advanced Drawing": 450,
+    "Basic Computer": 600,
+    "Finance & Accounting": 700,
+    "Web Development": 1000,
+    "Graphics Designing": 800,
+    "Digital Marketing": 900
   };
 
-function updateFee() {
-      const selectedCourse = document.getElementById("courseSelect").value;
-      const fee = courseFees[selectedCourse] || "";
-      document.getElementById("courseFee").value = `₹${fee}`;
+  function updateFee() {
+    const course = document.getElementById("courseSelect").value;
+    const fee = courseFees[course] || 0;
+    document.getElementById("courseFee").value = `₹${fee}`;
+  }
+
+  // Payment process
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const course = document.getElementById("courseSelect").value;
+    const fee = courseFees[course];
+
+    if (!fee) {
+      alert("Please select a valid course.");
+      return;
     }
+
+    const razorpayOptions = {
+      key: "RAZORPAY_KEY_ID", // 🔁 Replace with your Razorpay key
+      amount: fee * 100, // paisa
+      currency: "INR",
+      name: "EduLecture",
+      description: course,
+      handler: function (response) {
+        // On successful payment — submit the form
+        const paymentIdInput = document.createElement("input");
+        paymentIdInput.type = "hidden";
+        paymentIdInput.name = "Payment ID";
+        paymentIdInput.value = response.razorpay_payment_id;
+        form.appendChild(paymentIdInput);
+
+        form.submit(); // Submit to FormSubmit.co
+      }
+    };
+
+    const rzp = new Razorpay(razorpayOptions);
+    rzp.open();
+  });
 
 
 
