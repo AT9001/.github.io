@@ -2121,7 +2121,7 @@
         IFSC Code: ICIC0001613
       </div>
 
-      <button type="submit">Submit Form</button>
+      <button type="button" id="payBtn">Pay & Submit </button>
     </form>
 
 		    
@@ -2528,17 +2528,14 @@
     "Digital Marketing": 900
   };
 
-  function updateFee() {
+ function updateFee() {
     const course = document.getElementById("courseSelect").value;
     const fee = courseFees[course] || 0;
     document.getElementById("courseFee").value = `₹${fee}`;
   }
 
-  // Payment process
-  const form = document.querySelector("form");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
+  document.getElementById("payBtn").addEventListener("click", function () {
+    const form = document.querySelector("form");
     const course = document.getElementById("courseSelect").value;
     const fee = courseFees[course];
 
@@ -2548,20 +2545,18 @@
     }
 
     const razorpayOptions = {
-      key: "RAZORPAY_KEY_ID", // 🔁 Replace with your Razorpay key
-      amount: fee * 100, // paisa
+      key: "RAZORPAY_KEY_ID", // Replace with your key
+      amount: fee * 100,
       currency: "INR",
       name: "EduLecture",
       description: course,
       handler: function (response) {
-        // On successful payment — submit the form
         const paymentIdInput = document.createElement("input");
         paymentIdInput.type = "hidden";
         paymentIdInput.name = "Payment ID";
         paymentIdInput.value = response.razorpay_payment_id;
         form.appendChild(paymentIdInput);
-
-        form.submit(); // Submit to FormSubmit.co
+        form.submit();
       }
     };
 
@@ -2618,7 +2613,7 @@
 
 
 
-
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 				
     </script>
@@ -2678,7 +2673,7 @@
       `⏱️ *Time:* ${new Date().toLocaleString('en-IN')}`;
   }
 
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 	
 </script>	
 	
