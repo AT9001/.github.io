@@ -2427,7 +2427,7 @@
             // Send to FormSubmit.co
             fetch(FORM_SUBMIT_URL, {
                 method: "POST",
-                headers: { 
+                headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
@@ -2511,7 +2511,7 @@
 
 
 	    
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 
  // Course-fee mapping
   const courseFees = {
@@ -2677,6 +2677,9 @@
       (formType === 'admission' ? `💳 *Payment Method:* ${formData.paymentMethod}\n` : "") +
       `⏱️ *Time:* ${new Date().toLocaleString('en-IN')}`;
   }
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+	
 </script>	
 	
 	
