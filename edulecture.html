@@ -1936,7 +1936,7 @@
                 <button class="close-btn" id="closeEnquiryModal">&times;</button>
             </div>
             <div class="modal-body">
-        <form action="https://formsubmit.co/paulamit102030@gmail.com" method="POST" target="_blank" onsubmit="return handleSubmit()">
+        <form action="https://formsubmit.co/paulamit102030@gmail.com" method="POST">
 
   <!-- Hidden configuration inputs -->
   <input type="hidden" name="_captcha" value="false">
@@ -2531,30 +2531,7 @@ function updateFee() {
 
 
 
-// Telegram bot info
-  const BOT_TOKEN = '7992602255:AAH4fwVGIfHyPkeEG9Qxu3OMtKPUXmtS8gY';
-  const CHAT_ID = '7843761042';
-  const whatsappNumber = '919830727961';	    
 
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    const form = e.target;
-  
-
-    // Telegram message format
-    const telegramMessage = "`📩 New Form Submitted successfully":
-	  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: CHAT_ID, text: telegramMessage }),
-    }).catch(err => console.error('Telegram Error:', err));
-
-    // WhatsApp message format & URL encode
-    const whatsappMessage = encodeURIComponent(
-      `New Admission Form has been submitted.")
-      const waURL = `https://wa.me/${whatsappNumber}?text=${waMessage}`;
-    window.open(waURL, '_blank');
 
 
 
