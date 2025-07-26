@@ -1991,135 +1991,84 @@
                 <button class="close-btn" id="closeAdmissionModal">&times;</button>
             </div>
             <div class="modal-body">
-                 <form action="https://formsubmit.co/paulamit102030@gmail.com" method="POST">
-		 
-		  <!-- Hidden configuration inputs -->
-  		<input type="hidden" name="_captcha" value="false">
-  		<input type="hidden" name="_template" value="table">
-  		<input type="hidden" name="_subject" value="New Admission Form">
-  		<input type="hidden" name="_next" value="https://at9001.github.io/.github.io/edulecture.html">	
+                <form action="https://formsubmit.co/paulamit102030@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_subject" value="New Admission Submission" />
+    <input type="hidden" name="_next" value="https://at9001.github.io/.github.io/edilecture.html" />
 
-			
-                    <!-- Full Name -->
-  			<div class="form-group">
-    			<label for="fullName">Full Name:</label>
-    			<input type="text" id="fullName" name="Full Name" class="form-control" required>
-  			</div>
-			 
-                   
-			 <!-- Address -->
-  			<div class="form-group">
-   			<label for="address">Address:</label>
-   			<input type="text" id="address" name="Address" class="form-control" required>
- 			</div>
+    <label>Full Name</label>
+    <input type="text" name="Full Name" required>
 
+    <label>Address</label>
+    <input type="text" name="Address" required>
 
-			<!-- Gender --> 
-                    	<div class="form-group">
-                        <label for="gender">Gender:</label>
-                        <select id="gender" nmae="Gender" class="form-control" required>
-                            <option value="">Select Gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
-                            
-                        </select>
-                    </div>
-                     <!-- Age -->
-  			<div class="form-group">
-   	 		<label for="age">Age:</label>
-    			<input type="number" id="age" name="Age" class="form-control" required>
-  			</div>
+    <label>Gender</label>
+    <select name="Gender" required>
+      <option value="">Select Gender</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
 
+    <label>Age</label>
+    <input type="number" name="Age" required>
 
-			<!-- Course -->	 
-                    <div class="form-group">
-                        <label for="course">Course:</label>
-                        <select id="course" name="Course" class="form-control" required>
-                            <option value="">Select Course</option>
-                            <optgroup label="Spoken English">
-                                <option value="Basic English">Basic English</option>
-                                <option value="Intermediate English">Intermediate English</option>
-                                <option value="Advanced English">Advanced English</option>
-                            </optgroup>
-                            <optgroup label="Drawing">
-                                <option value="Basic Drawing">Basic Drawing</option>
-                                <option value="Intermediate Drawing">Intermediate Drawing</option>
-                                <option value="Advanced Drawing">Advanced Drawing</option>
-                            </optgroup>
-                            <optgroup label="Computer">
-                                <option value="Basic Computer">Basic Computer</option>
-                                <option value="Finance & Accounting">Finance & Accounting</option>
-                                <option value="Web Development">Web Development</option>
-                                <option value="Graphics Designing">Graphics Designing</option>
-                                <option value="Digital Marketing">Digital Marketing</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="admissionBatch">Preferred Batch:</label>
-                        <select id="batchTime" name="Batchtime" class="form-control" required>
-                            <option value="">Select Batch</option>
-                            <option value="Morning (9AM-12PM)">Morning (9AM-12PM)</option>
-                            <option value="Afternoon (2PM-5PM)">Afternoon (2PM-5PM)</option>
-                            <option value="Evening (6PM-9PM)">Evening (6PM-9PM)</option>
-                        </select>
-                    </div>
+    <label for="course">Select Course</label>
+    <select id="course" name="Course Interested" required onchange="updateFee()">
+      <option value="">Select Course</option>
+      <option value="Basic English">Basic English</option>
+      <option value="Intermediate English">Intermediate English</option>
+      <option value="Advanced English">Advanced English</option>
+      <option value="Basic Drawing">Basic Drawing</option>
+      <option value="Intermediate Drawing">Intermediate Drawing</option>
+      <option value="Advanced Drawing">Advanced Drawing</option>
+      <option value="Basic Computer">Basic Computer</option>
+      <option value="Finance & Accounting">Finance & Accounting</option>
+      <option value="Web Development">Web Development</option>
+      <option value="Graphics Designing">Graphics Designing</option>
+      <option value="Digital Marketing">Digital Marketing</option>
+    </select>
 
-			 <!-- Guardian Name -->
-                    <div class="form-group">
-                        <label for="guardianName">Guardian Name:</label>
-                        <input type="text" id="guardianName" name="Guardian Name" class="form-control">
-                    </div>
-                      <!-- Mobile Number -->
-  			<div class="form-group">
-    			<label for="mobile">Mobile Number:</label>
-    			<input type="tel" id="mobile" name="Mobile Number" class="form-control" required>
-  			</div>
+    <div id="feeDisplay">Course Fee: ₹<span id="fee">0</span></div>
+    <input type="hidden" id="feeInput" name="Course Fee" value="">
 
-  		<!-- Email ID -->
-  		<div class="form-group">
-    		<label for="email">Email ID:</label>
-    		<input type="email" id="email" name="Email ID" class="form-control" required>
-  		</div>
+    <label>Preferred Batch</label>
+    <select name="Preferred Batch" required>
+      <option value="">Select Batch</option>
+      <option>Morning (9AM–12PM)</option>
+      <option>Afternoon (2PM–5PM)</option>
+      <option>Evening (6PM–9PM)</option>
+    </select>
 
-  		
-                    
-                    <div class="payment-options">
-                        <h4>Payment Method</h4>
-                        <div class="payment-methods">
-                            <div class="payment-method" data-method="upi">
-                                <i class="fas fa-mobile-alt"></i>
-                                <span>UPI</span>
-                            </div>
-                            <div class="payment-method" data-method="card">
-                                <i class="far fa-credit-card"></i>
-                                <span>Card</span>
-                            </div>
-                            <div class="payment-method" data-method="netbanking">
-                                <i class="fas fa-university"></i>
-                                <span>Net Banking</span>
-                            </div>
-                            <div class="payment-method" data-method="paytm">
-                                <img src="https://via.placeholder.com/20" alt="Paytm">
-                                <span>Paytm</span>
-                            </div>
-                        </div>
-                        <input type="hidden" id="paymentMethod" name="paymentMethod" value="">
-                        
-                        <div class="bank-details">
-                            <h5>Bank Transfer Details</h5>
-                            <p>Account Name: Edulives</p>
-                            <p>Account Number: 0123456789</p>
-                            <p>Bank: ICICI Bank</p>
-                            <p>IFSC Code: ICIC0001613</p>
-                        </div>
-                    </div>
-                    
-		      <!-- Submit Button -->
-  		      <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+    <label>Guardian Name</label>
+    <input type="text" name="Guardian Name" required>
+
+    <label>Mobile Number</label>
+    <input type="tel" name="Mobile Number" required>
+
+    <label>Email ID</label>
+    <input type="email" name="Email ID" required>
+
+    <h3>Payment Method</h3>
+    <div class="payment-methods">
+      <input type="radio" id="upi" name="Payment Method" value="UPI" required>
+      <label for="upi">UPI</label><br>
+
+      <input type="radio" id="card" name="Payment Method" value="Card">
+      <label for="card">Card</label><br>
+
+      <input type="radio" id="netbanking" name="Payment Method" value="Net Banking">
+      <label for="netbanking">Net Banking</label><br>
+
+      <input type="radio" id="paytm" name="Payment Method" value="Paytm">
+      <label for="paytm">Paytm</label>
+    </div>
+
+    <br>
+    <button type="submit">SUBMIT FORM</button>
+  </form>
+		</div>
         </div>
     </div>
 
@@ -2493,7 +2442,26 @@
 
 
 
+ const courseFees = {
+    "Basic English": 2000,
+    "Intermediate English": 2500,
+    "Advanced English": 3000,
+    "Basic Drawing": 2500,
+    "Intermediate Drawing": 3000,
+    "Advanced Drawing": 3500,
+    "Basic Computer": 3000,
+    "Finance & Accounting": 3500,
+    "Web Development": 5000,
+    "Graphics Designing": 4000,
+    "Digital Marketing": 4500
+  };
 
+  function updateFee() {
+    const course = document.getElementById("course").value;
+    const fee = courseFees[course] || 0;
+    document.getElementById("fee").textContent = fee;
+    document.getElementById("feeInput").value = fee;
+  }
 
 
 
