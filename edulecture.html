@@ -2113,18 +2113,22 @@
       <label>Email ID</label>
       <input type="email" name="Email ID" required>
 
-      <label>Payment Method</label>
-      <div class="payment-methods">
-        <div>UPI</div>
-        <div>Card</div>
-        <div>Net Banking</div>
-        <div>Paytm</div>
-      </div>
+      <div class="payment-methods" style="display: flex; align-items: center; gap: 10px;">
+  	<div>UPI</div>
+  	<div>Card</div>
+  	<div>Net Banking</div>
+  	
+  <!-- QR Code next to Paytm -->
+  	<div id="qrSection" style="display: none;">
+    	<canvas id="qrCanvas" width="60" height="60"></canvas>
+  	</div>
+	</div>
+
 
       <div class="bank-details">
         <strong>Bank Transfer Details:</strong><br>
-        Account Name: Edulives<br>
-        Account Number: 0123456789<br>
+        Account Name: Amit Paul<br>
+        Account Number: 161301507922<br>
         Bank: ICICI Bank<br>
         IFSC Code: ICIC0001613
 </div>
