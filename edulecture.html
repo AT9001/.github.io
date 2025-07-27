@@ -2048,7 +2048,7 @@
             </div>
             <div class="modal-body">
 
-	 <form action="https://formsubmit.co/paulamit102030@gmail.com" method="POST">
+	 <form id="admissionForm" action="https://formsubmit.co/paulamit102030@gmail.com" method="POST">
       
       <!-- Redirect after submit -->
       <input type="hidden" name="_next" value="https://at9001.github.io/.github.io/edulecture.html">
@@ -2604,7 +2604,7 @@
     if (fee && parseInt(fee) > 0) {
       const paid = confirm(`Have you completed the payment of ₹${fee} via the QR code?`);
       if (paid) {
-        document.querySelector("form").submit();
+        document.getElementById("admissionForm").submit();
       } else {
         alert("Please complete the payment before submitting.");
       }
