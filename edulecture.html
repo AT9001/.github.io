@@ -2521,61 +2521,10 @@
 	    
 
 
- // Course-fee mapping
  
-<script>
-  const courseFees = {
-    "Basic English": 300,
-    "Intermediate English": 400,
-    "Advanced English": 500,
-    "Basic Drawing": 250,
-    "Intermediate Drawing": 350,
-    "Advanced Drawing": 450,
-    "Basic Computer": 600,
-    "Finance & Accounting": 700,
-    "Web Development": 1000,
-    "Graphics Designing": 800,
-    "Digital Marketing": 900
-  };
-
-  function updateFee() {
-    const course = document.getElementById("courseSelect").value;
-    const fee = courseFees[course] || 0;
-    document.getElementById("courseFee").value = "₹" + fee;
-  }
-
-  document.getElementById("payBtn").addEventListener("click", function () {
-    const course = document.getElementById("courseSelect").value;
-    const fee = courseFees[course];
-
-    if (!course || !fee) {
-      alert("Please select a valid course.");
-      return;
-    }
-
-    const options = {
-      key: "RAZORPAY_KEY_ID", // 👉 এখানে আপনার Razorpay Key বসান
-      amount: fee * 100,
-      currency: "INR",
-      name: "EduLecture",
-      description: course,
-      handler: function (response) {
-        const form = document.querySelector("form");
-        const paymentIdInput = document.createElement("input");
-        paymentIdInput.type = "hidden";
-        paymentIdInput.name = "Payment ID";
-        paymentIdInput.value = response.razorpay_payment_id;
-        form.appendChild(paymentIdInput);
-        form.submit(); // FormSubmit-এ পাঠানো হবে
-      }
-    };
-
-    const rzp = new Razorpay(options);
-    rzp.open();
-  });
 
 
- <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 
 
 
