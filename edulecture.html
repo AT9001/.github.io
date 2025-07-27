@@ -2149,7 +2149,7 @@
 	<label for="screenshotUpload">Upload Screenshot:</label>
 	<input type="file" id="screenshotUpload" name="screenshot" accept="image/*" required>
 	<br>
-	<small style="color: #888;">* File size must be within 200KB</small>
+	<small style="color: #888;">* File size must be within 100KB</small>
 	<br><br>	
       
 <!-- Submit Button (initially disabled) -->
@@ -2695,11 +2695,11 @@ function updateFee() {
 
 <script>
 	
-// File upload	 (200kb) 
+// File upload	 (100kb) 
  
 const fileInput = document.getElementById('screenshotUpload');
   const submitButton = document.getElementById('payBtn');
-  const maxSize = 204800; // 200 KB
+  const maxSize = 102400; // 100 KB
 
   fileInput.addEventListener('change', function () {
     const file = fileInput.files[0];
