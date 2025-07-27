@@ -2148,10 +2148,11 @@
 
 		 
       
-<!-- Inside your form -->
+<!-- Submit Button (initially disabled) -->
 <button type="button" id="payBtn"
-  style="padding: 12px 24px; font-size: 16px; font-weight: bold; background-color: #ff6600; color: white; border: none; border-radius: 5px; cursor: pointer;">
-  Pay & Submit
+  style="padding: 12px 24px; font-size: 16px; font-weight: bold; background-color: #ff6600; color: white; border: none; border-radius: 5px; cursor: pointer;"
+  disabled>
+  Submit
 </button>
 
 
@@ -2685,7 +2686,18 @@ function updateFee() {
 
 	  
  
+  // Screenshot upload er input field
+  const fileInput = document.getElementById('screenshotUpload');
+  const submitButton = document.getElementById('submitBtn');
 
+  // File input e change hole button enable kora hobe
+  fileInput.addEventListener('change', function () {
+    if (fileInput.files.length > 0) {
+      submitButton.disabled = false; // Enable button
+    } else {
+      submitButton.disabled = true;  // Keep it disabled
+    }
+  });
 
 
 
