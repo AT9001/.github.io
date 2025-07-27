@@ -2141,8 +2141,14 @@
 
 		 
       
+<!-- Inside your form -->
+<button type="button" id="payBtn"
+  style="padding: 12px 24px; font-size: 16px; font-weight: bold; background-color: #ff6600; color: white; border: none; border-radius: 5px; cursor: pointer;">
+  Pay & Submit
+</button>
 
-      <button type="button" id="payBtn">Pay & Submit </button>
+
+		 
     </form>
 
 		    
@@ -2545,11 +2551,11 @@
 
 
 
+<!-- QRious Library -->
 <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
 
 <script>	
-
-  // Course fee list
+  // 1. Course fee list
   const courseFees = {
     "Basic English": 500,
     "Intermediate English": 800,
@@ -2564,38 +2570,38 @@
     "Digital Marketing": 2800
   };
 
+  // 2. Initialize QR
   const qr = new QRious({
     element: document.getElementById("qrCanvas"),
-    size: 150,
+    size: 150, // You can make this smaller like 80 or 100
   });
 
+  // 3. Update fee & generate QR
   function updateFee() {
     const course = document.getElementById("courseSelect").value;
     const fee = courseFees[course] || 0;
     document.getElementById("courseFee").value = fee;
 
     if (fee > 0) {
-      // Generate UPI QR code
       const upiId = "edulecture@ptyes";
       const name = "Edulecture";
       const amount = fee;
       const txnNote = encodeURIComponent("Course Fee for " + course);
       const upiUrl = `upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR&tn=${txnNote}`;
       
-      qr.set({
-        value: upiUrl
-      });
-
+      qr.set({ value: upiUrl });
       document.getElementById("qrSection").style.display = "block";
     } else {
       document.getElementById("qrSection").style.display = "none";
     }
   }
 
-  document.getElementById("payBtn").addEventListener("click", function() {
+  // 4. Pay button click functionality
+  const btn = document.getElementById("payBtn");
+
+  btn.addEventListener("click", function() {
     const fee = document.getElementById("courseFee").value;
     if (fee && parseInt(fee) > 0) {
-      // Confirm Payment
       const paid = confirm(`Have you completed the payment of ₹${fee} via the QR code?`);
       if (paid) {
         document.querySelector("form").submit();
@@ -2607,6 +2613,14 @@
     }
   });
 
+  // 5. Optional: Button Hover effect
+  btn.addEventListener("mouseover", () => {
+    btn.style.backgroundColor = "#e65c00";  // Slightly darker on hover
+  });
+
+  btn.addEventListener("mouseout", () => {
+    btn.style.backgroundColor = "#ff6600";  // Original color
+  });
 
 
 
