@@ -2692,18 +2692,26 @@ function updateFee() {
 
 <script>
 	
-	  
+// File upload	 (200kb) 
  
-  // Screenshot upload er input field
-  const fileInput = document.getElementById('screenshotUpload');
+const fileInput = document.getElementById('screenshotUpload');
   const submitButton = document.getElementById('payBtn');
+  const maxSize = 204800; // 200 KB
 
-  // File input e change hole button enable kora hobe
   fileInput.addEventListener('change', function () {
-    if (fileInput.files.length > 0) {
-      submitButton.disabled = false; // Enable button
+    const file = fileInput.files[0];
+
+    if (!file) {
+      submitButton.disabled = true;
+      return;
+    }
+
+    if (file.size > maxSize) {
+      alert('File size must be less than or equal to 200KB.');
+      fileInput.value = ""; // Clear the invalid file
+      submitButton.disabled = true;
     } else {
-      submitButton.disabled = true;  // Keep it disabled
+      submitButton.disabled = false;
     }
   });
 
