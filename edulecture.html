@@ -2119,8 +2119,14 @@
   	<div>Net Banking</div>
   	
   <!-- QR Code next to Paytm -->
-  	<div id="qrSection" style="display: none;">
-    	<canvas id="qrCanvas" width="70" height="70"></canvas>
+  	<div id="qrSection" style="margin-left: 15px; display: none;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <canvas id="qrCanvas" width="100" height="100"></canvas>
+      <div>
+        <div><strong>Amount:</strong> ₹<span id="qrAmount"></span></div>
+        <div><strong>Valid for:</strong> <span id="qrTimer">--</span> seconds</div>
+        </div>
+    	</div>
   	</div>
 	</div>
 
@@ -2624,6 +2630,57 @@
 
 
 
+</script>
+
+
+<script>
+
+let qrTimerInterval; // globally declare
+
+function updateFee() {
+  const course = document.getElementById("courseSelect").value;
+  const fee = courseFees[course] || 0;
+  document.getElementById("courseFee").value = fee;
+
+  const qrSection = document.getElementById("qrSection");
+  const qrAmountSpan = document.getElementById("qrAmount");
+  const qrTimerSpan = document.getElementById("qrTimer");
+
+  if (fee > 0) {
+    // Show amount beside QR
+    qrAmountSpan.textContent = fee;
+
+    // Generate UPI QR code
+    const upiId = "edulecture@ptyes"; // <-- your UPI ID
+    const name = "Edulecture";
+    const amount = fee;
+    const txnNote = encodeURIComponent("Course Fee for " + course);
+    const upiUrl = `upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR&tn=${txnNote}`;
+    
+    qr.set({ value: upiUrl });
+    qrSection.style.display = "block";
+
+    // Start countdown timer (e.g. 300 seconds = 5 minutes)
+    let secondsLeft = 300;
+    qrTimerSpan.textContent = secondsLeft;
+
+    if (qrTimerInterval) clearInterval(qrTimerInterval); // clear any existing timer
+
+    qrTimerInterval = setInterval(() => {
+      secondsLeft--;
+      qrTimerSpan.textContent = secondsLeft;
+
+      if (secondsLeft <= 0) {
+        clearInterval(qrTimerInterval);
+        qrSection.style.display = "none"; // Hide QR after expiry
+        alert("QR code expired! Please reselect the course to generate again.");
+      }
+    }, 1000);
+  } else {
+    qrSection.style.display = "none";
+    clearInterval(qrTimerInterval);
+  }
+}
 
 	  
  
