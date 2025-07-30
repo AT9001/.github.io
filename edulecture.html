@@ -2048,7 +2048,7 @@
             </div>
             <div class="modal-body">
 
-	 <form id="admissionForm" action="https://formsubmit.co/paulamit102030@gmail.com" method="POST">
+	 <form id="admissionForm" action="https://formsubmit.co/paulamit102030@gmail.com" method="POST" enctype="multipart/form-data">
       
       <!-- Redirect after submit -->
       <input type="hidden" name="_next" value="https://at9001.github.io/.github.io/edulecture.html">
@@ -2056,6 +2056,9 @@
       <input type="hidden" name="_template" value="table">	 
       <input type="hidden" name="_subject" value="New Admission Form Submission">
       <input type="hidden" name="Course Fee" id="courseFee">
+
+     <-- Data send to php -->
+      <input type="hidden" name="send_to_php" value="true">
 
       <label>Full Name</label>
       <input type="text" name="Full Name" required>
